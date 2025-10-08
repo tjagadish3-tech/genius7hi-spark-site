@@ -17,11 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 15%;
 
-    --primary: 217 91% 45%;
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 100%;
     
-    --primary-dark: 217 91% 35%;
-    --primary-light: 217 91% 55%;
+    --primary-dark: 199 89% 38%;
+    --primary-light: 199 89% 58%;
 
     --secondary: 220 15% 95%;
     --secondary-foreground: 220 20% 15%;
@@ -29,7 +29,7 @@ All colors MUST be HSL.
     --muted: 220 15% 97%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 280 80% 55%;
+    --accent: 355 78% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,19 +37,25 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 217 91% 45%;
+    --ring: 199 89% 48%;
 
     --radius: 0.75rem;
     
-    /* Gradient definitions */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 45%), hsl(217 91% 55%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 45%), hsl(280 80% 55%));
-    --gradient-overlay: linear-gradient(135deg, hsl(217 91% 45% / 0.95), hsl(217 91% 35% / 0.95));
+    /* Dark overlay for hero sections */
+    --dark-overlay: 200 30% 12%;
+    --dark-surface: 200 25% 15%;
+    
+    /* Gradient definitions - Onics/Kyndryl inspired */
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 89% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 30% 12%), hsl(199 89% 25%));
+    --gradient-overlay: linear-gradient(135deg, hsl(200 30% 12% / 0.95), hsl(199 89% 20% / 0.95));
+    --gradient-dark-surface: linear-gradient(180deg, hsl(200 25% 15%), hsl(200 25% 18%));
     
     /* Shadows */
-    --shadow-soft: 0 2px 8px hsl(217 91% 45% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(217 91% 45% / 0.12);
-    --shadow-hard: 0 8px 32px hsl(217 91% 45% / 0.16);
+    --shadow-soft: 0 2px 8px hsl(199 89% 48% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(199 89% 48% / 0.12);
+    --shadow-hard: 0 8px 32px hsl(199 89% 48% / 0.16);
+    --shadow-glow: 0 0 40px hsl(199 89% 58% / 0.3);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,40 +79,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
+    --background: 200 30% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 220 25% 10%;
+    --card: 200 25% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 25% 10%;
+    --popover: 200 25% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91% 55%;
-    --primary-foreground: 220 25% 8%;
+    --primary: 199 89% 58%;
+    --primary-foreground: 200 30% 8%;
     
-    --primary-dark: 217 91% 45%;
-    --primary-light: 217 91% 65%;
+    --primary-dark: 199 89% 48%;
+    --primary-light: 199 89% 68%;
 
-    --secondary: 220 20% 15%;
+    --secondary: 200 20% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 20% 15%;
+    --muted: 200 20% 18%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 280 80% 60%;
+    --accent: 355 78% 66%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 217 91% 55%;
+    --border: 200 20% 22%;
+    --input: 200 20% 22%;
+    --ring: 199 89% 58%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 55%), hsl(217 91% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 55%), hsl(280 80% 60%));
-    --gradient-overlay: linear-gradient(135deg, hsl(217 91% 45% / 0.95), hsl(217 91% 35% / 0.95));
+    --dark-overlay: 200 30% 10%;
+    --dark-surface: 200 25% 15%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 58%), hsl(199 89% 68%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 30% 10%), hsl(199 89% 25%));
+    --gradient-overlay: linear-gradient(135deg, hsl(200 30% 10% / 0.95), hsl(199 89% 20% / 0.95));
+    --gradient-dark-surface: linear-gradient(180deg, hsl(200 25% 15%), hsl(200 25% 18%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -145,6 +155,18 @@ All colors MUST be HSL.
     background: var(--gradient-overlay);
   }
   
+  .gradient-dark-surface {
+    background: var(--gradient-dark-surface);
+  }
+  
+  .bg-dark-overlay {
+    background-color: hsl(var(--dark-overlay));
+  }
+  
+  .bg-dark-surface {
+    background-color: hsl(var(--dark-surface));
+  }
+  
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -157,6 +179,10 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-hard);
   }
   
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -166,6 +192,16 @@ All colors MUST be HSL.
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-accent {
+    background: linear-gradient(to right, hsl(var(--accent)), hsl(var(--primary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

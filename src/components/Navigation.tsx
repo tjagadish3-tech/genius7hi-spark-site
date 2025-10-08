@@ -21,6 +21,7 @@ const Navigation = () => {
     { name: "Cloud Migration", path: "/services/cloud-migration" },
     { name: "Embedded Systems", path: "/services/embedded-systems" },
     { name: "HR Solutions", path: "/services/hr-solutions" },
+    { name: "Web & Mobile Development", path: "/services/web-mobile-development" },
   ];
 
   return (
@@ -84,7 +85,7 @@ const Navigation = () => {
               </NavLink>
 
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-card rounded-lg shadow-hard border border-border animate-fade-in">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-card rounded-lg shadow-hard border border-border animate-fade-in z-50">
                   <div className="py-2">
                     <Link
                       to="/services"

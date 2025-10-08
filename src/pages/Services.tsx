@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { UserCheck, Cloud, Cpu, Users, ArrowRight } from "lucide-react";
+import { UserCheck, Cloud, Cpu, Users, ArrowRight, Code } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const Services = () => {
@@ -33,6 +33,13 @@ const Services = () => {
       description: "Modern HR management systems to streamline your workforce operations and employee engagement. Digital transformation for your HR department.",
       path: "/services/hr-solutions",
       features: ["HRMS Implementation", "Payroll Management", "Performance Tracking", "Employee Engagement"],
+    },
+    {
+      icon: Code,
+      title: "Web & Mobile Development",
+      description: "Build powerful, scalable web and mobile applications using the latest technologies. From concept to deployment, we deliver exceptional digital experiences.",
+      path: "/services/web-mobile-development",
+      features: ["React & React Native", "Progressive Web Apps", "API Development", "UI/UX Design"],
     },
   ];
 

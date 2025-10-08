@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Cloud, Cpu, UserCheck, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Users, Cloud, Cpu, UserCheck, ArrowRight, CheckCircle2, Code } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.jpg";
 
 const Home = () => {
@@ -29,6 +29,12 @@ const Home = () => {
       title: "HR Solutions",
       description: "Modern HR management systems to streamline your workforce operations and employee engagement.",
       path: "/services/hr-solutions",
+    },
+    {
+      icon: Code,
+      title: "Web & Mobile Development",
+      description: "Build powerful, scalable applications with cutting-edge web and mobile technologies.",
+      path: "/services/web-mobile-development",
     },
   ];
 
@@ -98,7 +104,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {services.map((service, index) => (
               <Link
                 key={service.path}

@@ -7,6 +7,7 @@ const Footer = () => {
     { name: "Cloud Migration", path: "/services/cloud-migration" },
     { name: "Embedded Systems", path: "/services/embedded-systems" },
     { name: "HR Solutions", path: "/services/hr-solutions" },
+    { name: "Web & Mobile Development", path: "/services/web-mobile-development" },
   ];
 
   return (

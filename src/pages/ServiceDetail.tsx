@@ -7,6 +7,7 @@ import talentImage from "@/assets/talent-acquisition.jpg";
 import cloudImage from "@/assets/cloud-migration.jpg";
 import embeddedImage from "@/assets/embedded-systems.jpg";
 import hrImage from "@/assets/hr-solutions.jpg";
+import webMobileImage from "@/assets/web-mobile-dev.jpg";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -122,6 +123,34 @@ const ServiceDetail = () => {
         "Implementation: Deploying and configuring the system",
         "Training: Comprehensive user training and documentation",
         "Support: Ongoing maintenance and updates",
+      ],
+    },
+    "web-mobile-development": {
+      title: "Web & Mobile Development",
+      subtitle: "Building Digital Experiences That Matter",
+      image: webMobileImage,
+      description: [
+        "In today's digital-first world, your web and mobile applications are often the primary touchpoints with your customers. Our Web & Mobile Development services combine cutting-edge technology with exceptional user experience design to create applications that users love and businesses rely on.",
+        "We specialize in building responsive web applications using modern frameworks like React, Next.js, and Vue.js, as well as native and cross-platform mobile apps using React Native and Flutter. Whether you need a customer-facing app, an internal business tool, or a complex enterprise solution, we have the expertise to deliver.",
+        "Our development process is agile and collaborative, ensuring that your vision is realized while maintaining flexibility for improvements. From MVP development to full-scale production deployment, we guide you through every step of the journey with transparency and expertise.",
+      ],
+      benefits: [
+        "Modern, responsive design across all devices",
+        "Native and cross-platform mobile development",
+        "Progressive Web Apps (PWA) for offline capability",
+        "RESTful and GraphQL API development",
+        "Real-time features and notifications",
+        "Secure authentication and data protection",
+        "Performance optimization and SEO",
+        "Continuous integration and deployment",
+      ],
+      process: [
+        "Discovery: Understanding your business goals and user needs",
+        "Design: Creating intuitive UI/UX designs and prototypes",
+        "Development: Building with best practices and clean code",
+        "Testing: Comprehensive QA across devices and platforms",
+        "Deployment: Smooth launch to production environments",
+        "Maintenance: Ongoing support, updates, and feature additions",
       ],
     },
   };

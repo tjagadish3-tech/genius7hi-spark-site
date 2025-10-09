@@ -1,161 +1,222 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Users, Cloud, Cpu, Code } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import talentImage from "@/assets/talent-acquisition.jpg";
-import cloudImage from "@/assets/cloud-migration.jpg";
-import embeddedImage from "@/assets/embedded-systems.jpg";
-import hrImage from "@/assets/hr-solutions.jpg";
-import webMobileImage from "@/assets/web-mobile-dev.jpg";
+import embeddedSystemsImg from "@/assets/embedded-systems.jpg";
+import cloudMigrationImg from "@/assets/cloud-migration.jpg";
+import webMobileDevImg from "@/assets/web-mobile-dev.jpg";
+import hrSolutionsImg from "@/assets/hr-solutions.jpg";
+
+interface ServiceInfo {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  image: string;
+  benefits: string[];
+  process: { title: string; description: string }[];
+  subServices?: { name: string; description: string }[];
+}
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
 
-  const servicesData = {
-    "talent-acquisition": {
-      title: "Talent Acquisition",
-      subtitle: "Find the Right Talent, Faster",
-      image: talentImage,
-      description: [
-        "In today's competitive market, finding the right talent can make or break your business. Our Talent Acquisition services leverage cutting-edge AI technology combined with human expertise to connect you with exceptional professionals who align with your company culture and goals.",
-        "We understand that hiring is more than just filling positions—it's about building teams that drive innovation and growth. Our comprehensive approach includes candidate sourcing, screening, interviewing, and onboarding support.",
-        "Whether you're looking for technical specialists, executives, or specialized roles, our extensive network and proven methodologies ensure you get access to the best talent in the market.",
-      ],
+  const serviceData: Record<string, ServiceInfo> = {
+    "iot-embedded-systems": {
+      title: "IoT and Embedded Systems Development",
+      description: "Complete IoT ecosystem development from concept to deployment. We design and develop smart devices, gateways, sensors, and embedded systems that power the connected world. Our solutions enable real-time monitoring, control, and automation across industries.",
+      icon: Cpu,
+      image: embeddedSystemsImg,
       benefits: [
-        "AI-powered candidate matching for optimal fit",
-        "Access to exclusive talent pool and networks",
-        "Reduced time-to-hire by up to 50%",
-        "Comprehensive background verification",
-        "Cultural fit assessment and evaluation",
-        "Onboarding and integration support",
-        "Flexible engagement models (contract, permanent, contract-to-hire)",
-        "Industry-specific expertise across sectors",
+        "Custom IoT hardware design and development",
+        "Low-power, high-efficiency embedded solutions",
+        "Secure device-to-cloud connectivity",
+        "Real-time data processing and edge computing",
+        "Scalable architecture supporting thousands of devices",
+        "Complete starter kits for rapid prototyping",
       ],
       process: [
-        "Requirements Analysis: Understanding your needs and company culture",
-        "Candidate Sourcing: Leveraging our network and AI tools",
-        "Screening & Assessment: Technical and cultural fit evaluation",
-        "Interview Coordination: Managing the entire interview process",
-        "Offer Management: Negotiation and closure support",
-        "Onboarding Support: Ensuring smooth integration",
+        {
+          title: "IoT Strategy & Planning",
+          description: "Define your IoT use case, device requirements, and ecosystem architecture.",
+        },
+        {
+          title: "Hardware Design",
+          description: "Custom PCB design for gateways, sensors, smart plugs, relays, and meter interfaces.",
+        },
+        {
+          title: "Firmware Development",
+          description: "Robust embedded software with RTOS, secure boot, and OTA update capabilities.",
+        },
+        {
+          title: "Cloud Integration",
+          description: "Seamless integration with cloud platforms for data management and analytics.",
+        },
+        {
+          title: "Testing & Certification",
+          description: "Comprehensive testing and regulatory certification support.",
+        },
+        {
+          title: "Production & Support",
+          description: "Manufacturing support, deployment, and ongoing maintenance.",
+        },
+      ],
+      subServices: [
+        { name: "Gateways", description: "Industrial-grade IoT gateways with multi-protocol support" },
+        { name: "Sensors & Alarms", description: "Smart sensors for temperature, motion, environmental monitoring" },
+        { name: "Smart Plugs", description: "Energy monitoring and control smart plug solutions" },
+        { name: "Meter Interfaces", description: "Smart meter interfaces for utility monitoring" },
+        { name: "Smart Relays", description: "Intelligent relay systems for automation and control" },
+        { name: "Starter Kits", description: "Complete development kits for rapid IoT prototyping" },
       ],
     },
-    "cloud-migration": {
-      title: "Cloud Migration",
-      subtitle: "Accelerate Your Digital Transformation",
-      image: cloudImage,
-      description: [
-        "Cloud migration is no longer optional—it's essential for businesses looking to stay competitive. Our Cloud Migration services help you seamlessly transition from legacy systems to modern cloud infrastructure, ensuring minimal disruption and maximum performance.",
-        "We specialize in AWS, Azure, and Google Cloud platforms, providing end-to-end migration services including assessment, planning, execution, and optimization. Our team ensures your data remains secure throughout the migration process while improving accessibility and scalability.",
-        "Beyond just moving data, we architect cloud solutions that reduce costs, improve performance, and enable innovation. Our expertise spans infrastructure migration, application modernization, and hybrid cloud setups.",
-      ],
+    "cloud-solutions": {
+      title: "Cloud Solutions",
+      description: "End-to-end cloud services that transform your IT infrastructure. From strategic planning to migration, modernization, and ongoing management, we help you leverage cloud technology to drive innovation, reduce costs, and scale efficiently across AWS, Azure, and Google Cloud.",
+      icon: Cloud,
+      image: cloudMigrationImg,
       benefits: [
-        "Reduced infrastructure costs by 30-60%",
-        "Enhanced scalability and flexibility",
-        "Improved disaster recovery and business continuity",
-        "Better security and compliance",
-        "Increased operational efficiency",
-        "Access to cutting-edge cloud services",
-        "24/7 monitoring and support",
-        "Zero downtime migration strategies",
+        "30-40% reduction in infrastructure costs",
+        "Zero-downtime migration strategies",
+        "Multi-cloud and hybrid cloud expertise",
+        "Enhanced security and compliance frameworks",
+        "24/7 managed services and support",
+        "Continuous cost optimization and performance tuning",
       ],
       process: [
-        "Assessment: Analyzing your current infrastructure and requirements",
-        "Strategy: Developing a customized migration roadmap",
-        "Planning: Detailed execution plan with timelines and milestones",
-        "Migration: Phased migration with minimal disruption",
-        "Optimization: Fine-tuning for performance and cost efficiency",
-        "Support: Ongoing monitoring and maintenance",
+        {
+          title: "Engineering Overview & Assessment",
+          description: "Comprehensive analysis of your current infrastructure, applications, and cloud readiness.",
+        },
+        {
+          title: "Cloud Strategy",
+          description: "Develop a customized cloud roadmap aligned with your business objectives.",
+        },
+        {
+          title: "Migration & Modernization",
+          description: "Execute phased migration with application modernization and refactoring.",
+        },
+        {
+          title: "Cloud-Native Architecture",
+          description: "Design and implement scalable, resilient cloud-native solutions.",
+        },
+        {
+          title: "Operations & Management",
+          description: "Implement modern DevOps practices and monitoring frameworks.",
+        },
+        {
+          title: "Optimization & Support",
+          description: "Continuous cost management, performance tuning, and 24/7 support.",
+        },
       ],
-    },
-    "embedded-systems": {
-      title: "Embedded Systems",
-      subtitle: "Bringing Innovation to Connected Devices",
-      image: embeddedImage,
-      description: [
-        "The future is connected, and embedded systems are at the heart of this revolution. Our Embedded Systems services help you design, develop, and deploy intelligent devices that power the Internet of Things (IoT), industrial automation, and consumer electronics.",
-        "From concept to production, we provide comprehensive embedded solutions including hardware design, firmware development, testing, and integration. Our team has expertise in various microcontrollers, sensors, communication protocols, and real-time operating systems.",
-        "Whether you're building smart home devices, industrial sensors, medical equipment, or automotive systems, we bring the technical expertise and innovation needed to turn your vision into reality.",
-      ],
-      benefits: [
-        "Custom hardware and firmware solutions",
-        "End-to-end development from prototype to production",
-        "Expertise in ARM, AVR, PIC, and other architectures",
-        "IoT integration and connectivity solutions",
-        "Real-time operating system (RTOS) implementation",
-        "Low-power and energy-efficient designs",
-        "Rigorous testing and quality assurance",
-        "Post-deployment support and updates",
-      ],
-      process: [
-        "Concept & Requirements: Understanding your product vision",
-        "Design: Hardware schematic and firmware architecture",
-        "Prototyping: Building and testing proof of concept",
-        "Development: Full-scale firmware and hardware development",
-        "Testing: Comprehensive validation and certification",
-        "Production: Manufacturing support and deployment",
-      ],
-    },
-    "hr-solutions": {
-      title: "HR Solutions",
-      subtitle: "Modern HR for Modern Businesses",
-      image: hrImage,
-      description: [
-        "Your employees are your most valuable asset, and managing them effectively requires the right tools and strategies. Our HR Solutions provide comprehensive human resource management systems that streamline operations, improve employee engagement, and drive organizational growth.",
-        "We implement and customize leading HRMS platforms, or develop custom solutions tailored to your unique workflows. From recruitment to retirement, we cover the entire employee lifecycle with integrated, user-friendly systems.",
-        "Beyond software, we provide strategic HR consulting to help you build better workplace cultures, improve retention, and maximize employee productivity. Our solutions are designed to scale with your business.",
-      ],
-      benefits: [
-        "Automated payroll and attendance management",
-        "Centralized employee data and records",
-        "Performance management and tracking",
-        "Self-service portals for employees",
-        "Advanced analytics and reporting",
-        "Compliance management and documentation",
-        "Training and development modules",
-        "Mobile-friendly access anywhere, anytime",
-      ],
-      process: [
-        "Consultation: Understanding your HR challenges and goals",
-        "Analysis: Assessing current processes and systems",
-        "Design: Customizing solutions to your requirements",
-        "Implementation: Deploying and configuring the system",
-        "Training: Comprehensive user training and documentation",
-        "Support: Ongoing maintenance and updates",
+      subServices: [
+        { name: "Engineering Overview", description: "Cloud readiness assessment and architecture design" },
+        { name: "Cloud Migration & Modernization", description: "Seamless migration with application modernization" },
+        { name: "Modern Cloud Operations", description: "DevOps, CI/CD, and infrastructure automation" },
+        { name: "Cloud Cost Management", description: "Optimization and FinOps best practices" },
+        { name: "Managed Services", description: "24/7 monitoring, support, and maintenance" },
       ],
     },
     "web-mobile-development": {
-      title: "Web & Mobile Development",
-      subtitle: "Building Digital Experiences That Matter",
-      image: webMobileImage,
-      description: [
-        "In today's digital-first world, your web and mobile applications are often the primary touchpoints with your customers. Our Web & Mobile Development services combine cutting-edge technology with exceptional user experience design to create applications that users love and businesses rely on.",
-        "We specialize in building responsive web applications using modern frameworks like React, Next.js, and Vue.js, as well as native and cross-platform mobile apps using React Native and Flutter. Whether you need a customer-facing app, an internal business tool, or a complex enterprise solution, we have the expertise to deliver.",
-        "Our development process is agile and collaborative, ensuring that your vision is realized while maintaining flexibility for improvements. From MVP development to full-scale production deployment, we guide you through every step of the journey with transparency and expertise.",
-      ],
+      title: "Web & Mobile Application Development",
+      description: "Custom software development specializing in IoT device software and enterprise applications. We build scalable, high-performance web and mobile solutions that seamlessly integrate with your IoT infrastructure and business systems, delivering exceptional user experiences.",
+      icon: Code,
+      image: webMobileDevImg,
       benefits: [
-        "Modern, responsive design across all devices",
-        "Native and cross-platform mobile development",
-        "Progressive Web Apps (PWA) for offline capability",
-        "RESTful and GraphQL API development",
-        "Real-time features and notifications",
-        "Secure authentication and data protection",
-        "Performance optimization and SEO",
-        "Continuous integration and deployment",
+        "IoT device software with real-time connectivity",
+        "Cross-platform mobile apps (iOS, Android, Web)",
+        "Custom built software tailored to your needs",
+        "Cloud-native architecture for scalability",
+        "Secure API development and integration",
+        "Continuous deployment and monitoring",
       ],
       process: [
-        "Discovery: Understanding your business goals and user needs",
-        "Design: Creating intuitive UI/UX designs and prototypes",
-        "Development: Building with best practices and clean code",
-        "Testing: Comprehensive QA across devices and platforms",
-        "Deployment: Smooth launch to production environments",
-        "Maintenance: Ongoing support, updates, and feature additions",
+        {
+          title: "Discovery & Requirements",
+          description: "Define project scope, IoT integration needs, and technical requirements.",
+        },
+        {
+          title: "Architecture Design",
+          description: "Design scalable architecture with IoT connectivity and cloud integration.",
+        },
+        {
+          title: "UI/UX Design",
+          description: "Create intuitive interfaces for device control and data visualization.",
+        },
+        {
+          title: "Development",
+          description: "Agile development with focus on IoT protocols and real-time features.",
+        },
+        {
+          title: "Testing & QA",
+          description: "Comprehensive testing including device connectivity and performance.",
+        },
+        {
+          title: "Deployment & Support",
+          description: "Launch support, monitoring, and continuous improvement.",
+        },
+      ],
+      subServices: [
+        { name: "IoT Device Software", description: "Custom software for IoT device control and monitoring" },
+        { name: "Custom Built Software", description: "Tailored enterprise applications and platforms" },
+        { name: "Progressive Web Apps", description: "Modern web apps with offline capabilities" },
+        { name: "Mobile Applications", description: "Native and cross-platform mobile apps" },
+        { name: "API Development", description: "RESTful and GraphQL API design and implementation" },
+        { name: "Cloud Integration", description: "Seamless integration with cloud platforms and IoT backends" },
+      ],
+    },
+    "hr-talent-acquisition": {
+      title: "HR Solutions & Talent Acquisition",
+      description: "Comprehensive HR management combined with AI-powered recruitment solutions. We transform your HR operations with modern HRMS platforms while helping you find, attract, and retain the best talent. End-to-end solutions for workforce management and talent acquisition.",
+      icon: Users,
+      image: hrSolutionsImg,
+      benefits: [
+        "AI-powered candidate matching and recruitment",
+        "Automated HR workflows reducing admin time by 70%",
+        "Real-time analytics for data-driven decisions",
+        "Improved employee experience and engagement",
+        "Compliance management and audit trails",
+        "Seamless integration with enterprise systems",
+      ],
+      process: [
+        {
+          title: "HR Needs Assessment",
+          description: "Analyze your HR processes, recruitment needs, and organizational requirements.",
+        },
+        {
+          title: "System Selection & Design",
+          description: "Recommend and customize HRMS and recruitment platforms.",
+        },
+        {
+          title: "Talent Strategy",
+          description: "Develop AI-powered recruitment strategy and employer branding.",
+        },
+        {
+          title: "Implementation",
+          description: "Deploy HRMS, configure recruitment workflows, and integrate systems.",
+        },
+        {
+          title: "Training & Adoption",
+          description: "Comprehensive training for HR teams and hiring managers.",
+        },
+        {
+          title: "Support & Optimization",
+          description: "Ongoing support, recruitment services, and continuous improvement.",
+        },
+      ],
+      subServices: [
+        { name: "AI-Powered Recruitment", description: "Advanced candidate matching and sourcing technology" },
+        { name: "HRMS Implementation", description: "Modern HR management system deployment" },
+        { name: "Payroll Management", description: "Automated payroll processing and compliance" },
+        { name: "Performance Tracking", description: "Goal setting, reviews, and performance analytics" },
+        { name: "Executive Search", description: "Leadership and executive recruitment services" },
+        { name: "Onboarding Support", description: "Structured onboarding programs for new hires" },
       ],
     },
   };
 
-  const service = serviceId ? servicesData[serviceId as keyof typeof servicesData] : null;
+  const service = serviceId ? serviceData[serviceId as keyof typeof serviceData] : null;
 
   if (!service) {
     return (
@@ -170,6 +231,8 @@ const ServiceDetail = () => {
     );
   }
 
+  const ServiceIcon = service.icon;
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4">
@@ -181,57 +244,65 @@ const ServiceDetail = () => {
         />
 
         {/* Hero Section */}
-        <div className="mb-12 animate-fade-in">
+        <div className="mb-16 animate-fade-in">
           <div className="relative h-96 rounded-2xl overflow-hidden shadow-hard mb-8">
             <img
               src={service.image}
               alt={service.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+            <div className="absolute inset-0 gradient-overlay flex items-end">
               <div className="p-8 md:p-12 text-white">
+                <div className="mb-4 inline-block p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+                  <ServiceIcon className="h-12 w-12" />
+                </div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">{service.title}</h1>
-                <p className="text-2xl text-white/90">{service.subtitle}</p>
+                <p className="text-xl text-white/90 max-w-3xl">{service.description}</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Description */}
-        <div className="mb-12 animate-fade-in">
-          <div className="max-w-4xl mx-auto space-y-6">
-            {service.description.map((paragraph, index) => (
-              <p key={index} className="text-lg text-muted-foreground leading-relaxed">
-                {paragraph}
-              </p>
+        {/* Sub-Services Section */}
+        {service.subServices && service.subServices.length > 0 && (
+          <div className="mb-16 animate-fade-in">
+            <h2 className="text-4xl font-bold mb-8 text-center">
+              Our <span className="text-gradient">Offerings</span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.subServices.map((subService, index) => (
+                <Card key={index} className="border-t-4 border-t-primary hover:shadow-hard transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{subService.name}</h3>
+                    <p className="text-muted-foreground">{subService.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Benefits Section */}
+        <div className="mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold mb-8 text-center">
+            Key <span className="text-gradient">Benefits</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {service.benefits.map((benefit, index) => (
+              <Card key={index} className="border-l-4 border-l-accent hover:shadow-medium transition-all">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+                    <p className="text-foreground">{benefit}</p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
 
-        {/* Benefits Section */}
-        <div className="mb-12 animate-fade-in">
-          <h2 className="text-4xl font-bold mb-8 text-center">
-            Key <span className="text-gradient">Benefits</span>
-          </h2>
-          <Card className="bg-secondary">
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {service.benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
         {/* Process Section */}
-        <div className="mb-12 animate-fade-in">
+        <div className="mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold mb-8 text-center">
             Our <span className="text-gradient">Process</span>
           </h2>
@@ -239,16 +310,14 @@ const ServiceDetail = () => {
             {service.process.map((step, index) => (
               <Card
                 key={index}
-                className="hover:shadow-medium transition-all duration-300"
+                className="hover:shadow-hard transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary"
               >
                 <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-primary mb-4">
-                    {String(index + 1).padStart(2, "0")}
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <span className="text-2xl font-bold text-primary">{index + 1}</span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {step.split(":")[0]}
-                  </h3>
-                  <p className="text-muted-foreground">{step.split(":")[1]}</p>
+                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -256,16 +325,16 @@ const ServiceDetail = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="gradient-hero text-white rounded-2xl p-8 md:p-12 text-center animate-fade-in">
+        <div className="gradient-hero text-white rounded-2xl p-8 md:p-12 text-center animate-fade-in shadow-glow">
           <h2 className="text-4xl font-bold mb-4">
             Ready to Get Started?
           </h2>
           <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Let's discuss how our {service.title.toLowerCase()} services can transform your business
+            Let's discuss how our {service.title.toLowerCase()} can transform your business and drive innovation
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-              Get a Quote
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white">
+              Get a Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

@@ -3,11 +3,10 @@ import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   const services = [
-    { name: "Talent Acquisition", path: "/services/talent-acquisition" },
-    { name: "Cloud Migration", path: "/services/cloud-migration" },
-    { name: "Embedded Systems", path: "/services/embedded-systems" },
-    { name: "HR Solutions", path: "/services/hr-solutions" },
+    { name: "IoT & Embedded Systems", path: "/services/iot-embedded-systems" },
+    { name: "Cloud Solutions", path: "/services/cloud-solutions" },
     { name: "Web & Mobile Development", path: "/services/web-mobile-development" },
+    { name: "HR Solutions & Talent Acquisition", path: "/services/hr-talent-acquisition" },
   ];
 
   return (

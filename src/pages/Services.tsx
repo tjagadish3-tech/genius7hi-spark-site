@@ -7,39 +7,32 @@ import Breadcrumb from "@/components/Breadcrumb";
 const Services = () => {
   const services = [
     {
-      icon: UserCheck,
-      title: "Talent Acquisition",
-      description: "Find the perfect talent with our AI-powered recruitment solutions and expert hiring services. We streamline your hiring process and connect you with top-tier professionals.",
-      path: "/services/talent-acquisition",
-      features: ["AI-Powered Matching", "Executive Search", "Technical Recruiting", "Onboarding Support"],
+      icon: Cpu,
+      title: "IoT and Embedded Systems Development",
+      description: "Complete IoT ecosystem solutions including custom hardware, firmware, and smart device development. From gateways to sensors, we deliver innovative connected solutions that power the future.",
+      path: "/services/iot-embedded-systems",
+      features: ["Gateways", "Sensors & Alarms", "Smart Plugs", "Meter Interfaces", "Smart Relays", "Starter Kits"],
     },
     {
       icon: Cloud,
-      title: "Cloud Migration",
-      description: "Seamlessly transition to the cloud with our comprehensive migration and optimization services. We ensure minimal downtime and maximum performance.",
-      path: "/services/cloud-migration",
-      features: ["AWS & Azure Migration", "Cloud Architecture", "Cost Optimization", "Security & Compliance"],
-    },
-    {
-      icon: Cpu,
-      title: "Embedded Systems",
-      description: "Custom embedded solutions for IoT, automation, and next-generation connected devices. We bring your hardware ideas to life.",
-      path: "/services/embedded-systems",
-      features: ["IoT Solutions", "Firmware Development", "Hardware Design", "System Integration"],
-    },
-    {
-      icon: Users,
-      title: "HR Solutions",
-      description: "Modern HR management systems to streamline your workforce operations and employee engagement. Digital transformation for your HR department.",
-      path: "/services/hr-solutions",
-      features: ["HRMS Implementation", "Payroll Management", "Performance Tracking", "Employee Engagement"],
+      title: "Cloud Solutions",
+      description: "Comprehensive cloud services from strategic planning to implementation and ongoing management. We help you leverage cloud technology to drive innovation, reduce costs, and scale efficiently.",
+      path: "/services/cloud-solutions",
+      features: ["Engineering Overview", "Cloud Migration & Modernization", "Modern Cloud Operations", "Cloud Cost Management", "Managed Services"],
     },
     {
       icon: Code,
-      title: "Web & Mobile Development",
-      description: "Build powerful, scalable web and mobile applications using the latest technologies. From concept to deployment, we deliver exceptional digital experiences.",
+      title: "Web & Mobile Application Development",
+      description: "Custom software development specializing in IoT device software and enterprise applications. We build scalable, high-performance solutions that seamlessly integrate with your IoT infrastructure and business needs.",
       path: "/services/web-mobile-development",
-      features: ["React & React Native", "Progressive Web Apps", "API Development", "UI/UX Design"],
+      features: ["IoT Device Software", "Custom Built Software", "Progressive Web Apps", "Mobile Applications", "API Development", "Cloud Integration"],
+    },
+    {
+      icon: Users,
+      title: "HR Solutions & Talent Acquisition",
+      description: "Modern HR management systems combined with AI-powered recruitment solutions. We streamline your workforce operations, from hiring top talent to managing employee engagement and performance.",
+      path: "/services/hr-talent-acquisition",
+      features: ["AI-Powered Recruitment", "HRMS Implementation", "Payroll Management", "Performance Tracking", "Executive Search", "Onboarding Support"],
     },
   ];
 

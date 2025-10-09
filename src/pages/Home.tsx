@@ -7,34 +7,28 @@ import heroBanner from "@/assets/hero-banner.jpg";
 const Home = () => {
   const services = [
     {
-      icon: UserCheck,
-      title: "Talent Acquisition",
-      description: "Find the perfect talent with our AI-powered recruitment solutions and expert hiring services.",
-      path: "/services/talent-acquisition",
+      icon: Cpu,
+      title: "IoT and Embedded Systems Development",
+      description: "Complete IoT solutions from gateways to smart devices, sensors, and custom hardware.",
+      path: "/services/iot-embedded-systems",
     },
     {
       icon: Cloud,
-      title: "Cloud Migration",
-      description: "Seamlessly transition to the cloud with our comprehensive migration and optimization services.",
-      path: "/services/cloud-migration",
-    },
-    {
-      icon: Cpu,
-      title: "Embedded Systems",
-      description: "Custom embedded solutions for IoT, automation, and next-generation connected devices.",
-      path: "/services/embedded-systems",
-    },
-    {
-      icon: Users,
-      title: "HR Solutions",
-      description: "Modern HR management systems to streamline your workforce operations and employee engagement.",
-      path: "/services/hr-solutions",
+      title: "Cloud Solutions",
+      description: "End-to-end cloud services from migration to modern operations and cost management.",
+      path: "/services/cloud-solutions",
     },
     {
       icon: Code,
-      title: "Web & Mobile Development",
-      description: "Build powerful, scalable applications with cutting-edge web and mobile technologies.",
+      title: "Web & Mobile Application Development",
+      description: "Custom software solutions specializing in IoT device software and scalable applications.",
       path: "/services/web-mobile-development",
+    },
+    {
+      icon: Users,
+      title: "HR Solutions & Talent Acquisition",
+      description: "Comprehensive HR management and AI-powered recruitment solutions.",
+      path: "/services/hr-talent-acquisition",
     },
   ];
 
@@ -104,7 +98,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Link
                 key={service.path}

@@ -70,7 +70,7 @@ const Home = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
+                className="border-white text-primary hover:bg-white hover:text-primary text-lg px-8 py-6"
               >
                 Our Services
               </Button>

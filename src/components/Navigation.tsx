@@ -8,6 +8,24 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.services-dropdown')) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    if (isServicesOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isServicesOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -46,8 +64,8 @@ const Navigation = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-primary ${
-                  isActive ? "text-primary" : "text-foreground"
+                `text-sm font-medium transition-colors text-primary hover:text-accent ${
+                  isActive ? "font-semibold" : ""
                 }`
               }
             >
@@ -57,8 +75,8 @@ const Navigation = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-primary ${
-                  isActive ? "text-primary" : "text-foreground"
+                `text-sm font-medium transition-colors text-primary hover:text-accent ${
+                  isActive ? "font-semibold" : ""
                 }`
               }
             >
@@ -66,29 +84,22 @@ const Navigation = () => {
             </NavLink>
 
             {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
-                    isActive ? "text-primary" : "text-foreground"
-                  }`
-                }
+            <div className="relative services-dropdown">
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="text-sm font-medium transition-colors text-primary hover:text-accent flex items-center gap-1"
               >
                 Services
                 <ChevronDown className="h-4 w-4" />
-              </NavLink>
+              </button>
 
               {isServicesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-56 bg-card rounded-lg shadow-hard border border-border animate-fade-in z-50">
                   <div className="py-2">
                     <Link
                       to="/services"
-                      className="block px-4 py-2 text-sm hover:bg-secondary transition-colors"
+                      onClick={() => setIsServicesOpen(false)}
+                      className="block px-4 py-2 text-sm text-primary hover:text-accent hover:bg-secondary/50 transition-colors"
                     >
                       All Services
                     </Link>
@@ -97,7 +108,8 @@ const Navigation = () => {
                       <Link
                         key={service.path}
                         to={service.path}
-                        className="block px-4 py-2 text-sm hover:bg-secondary transition-colors"
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-4 py-2 text-sm text-primary hover:text-accent hover:bg-secondary/50 transition-colors"
                       >
                         {service.name}
                       </Link>
@@ -110,8 +122,8 @@ const Navigation = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-primary ${
-                  isActive ? "text-primary" : "text-foreground"
+                `text-sm font-medium transition-colors text-primary hover:text-accent ${
+                  isActive ? "font-semibold" : ""
                 }`
               }
             >
@@ -146,8 +158,8 @@ const Navigation = () => {
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={({ isActive }) =>
-                  `text-sm font-medium ${
-                    isActive ? "text-primary" : "text-foreground"
+                  `text-sm font-medium text-primary ${
+                    isActive ? "font-semibold" : ""
                   }`
                 }
               >
@@ -158,8 +170,8 @@ const Navigation = () => {
                 to="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={({ isActive }) =>
-                  `text-sm font-medium ${
-                    isActive ? "text-primary" : "text-foreground"
+                  `text-sm font-medium text-primary ${
+                    isActive ? "font-semibold" : ""
                   }`
                 }
               >
@@ -171,8 +183,8 @@ const Navigation = () => {
                   to="/services"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `text-sm font-medium block mb-2 ${
-                      isActive ? "text-primary" : "text-foreground"
+                    `text-sm font-medium block mb-2 text-primary ${
+                      isActive ? "font-semibold" : ""
                     }`
                   }
                 >
@@ -184,7 +196,7 @@ const Navigation = () => {
                       key={service.path}
                       to={service.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block text-sm text-muted-foreground hover:text-primary"
+                      className="block text-sm text-primary hover:text-accent"
                     >
                       {service.name}
                     </Link>
@@ -196,8 +208,8 @@ const Navigation = () => {
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={({ isActive }) =>
-                  `text-sm font-medium ${
-                    isActive ? "text-primary" : "text-foreground"
+                  `text-sm font-medium text-primary ${
+                    isActive ? "font-semibold" : ""
                   }`
                 }
               >

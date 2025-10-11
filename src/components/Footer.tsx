@@ -104,18 +104,18 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <span>Bengaluru, Karnataka, India</span>
+                <span>Regus Office, Tejas Arcade, Rajajinagar, Bengaluru, Karnataka 560010</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="mailto:info@genius7hi.com" className="hover:text-primary transition-colors">
-                  info@genius7hi.com
+                <a href="mailto:sales@genius7hi.com" className="hover:text-primary transition-colors">
+                  sales@genius7hi.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="tel:+911234567890" className="hover:text-primary transition-colors">
-                  +91 123 456 7890
+                <a href="tel:6366967493" className="hover:text-primary transition-colors">
+                  Call us: 6366967493
                 </a>
               </li>
             </ul>

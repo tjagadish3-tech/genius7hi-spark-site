@@ -28,11 +28,9 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "2020", event: "Company Founded", description: "Started with a vision to innovate" },
-    { year: "2021", event: "50+ Clients", description: "Expanded our client base across industries" },
-    { year: "2022", event: "New Services", description: "Launched Cloud and HR Solutions" },
-    { year: "2023", event: "100+ Projects", description: "Successfully delivered 100+ projects" },
-    { year: "2024", event: "Global Expansion", description: "Serving clients internationally" },
+    { year: "2024", event: "Company Founded", description: "GeniusXT 7HI established with a vision to innovate" },
+    { year: "2024", event: "Core Services Launched", description: "IoT, Cloud Solutions, Web Development & HR Services" },
+    { year: "2025", event: "Growing Strong", description: "Building partnerships and delivering excellence" },
   ];
 
   return (
@@ -46,8 +44,9 @@ const About = () => {
             About <span className="text-gradient">GeniusXT 7HI</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            We are a technology-driven company based in Bengaluru, dedicated to delivering innovative solutions
-            that help businesses thrive in the digital age.
+            GeniusXT 7HI was founded in 2024 with a vision to deliver innovative technology solutions in embedded systems, 
+            cloud migration, and HR talent acquisition. We focus on helping businesses grow through digital transformation, 
+            modern software development, and professional workforce solutions.
           </p>
         </div>
 
@@ -92,18 +91,19 @@ const About = () => {
           <h2 className="text-4xl font-bold mb-6">Our Story</h2>
           <div className="space-y-4 text-lg text-muted-foreground">
             <p>
-              Founded in 2020, GeniusXT 7HI (OPC) Private Limited emerged from a simple belief: technology should
-              empower businesses, not complicate them. Based in the heart of Bengaluru's tech ecosystem, we've grown
-              from a small startup to a trusted technology partner for businesses across India and beyond.
+              Founded in 2024, GeniusXT 7HI (OPC) Private Limited emerged with a vision to deliver innovative technology 
+              solutions in embedded systems, cloud migration, and HR talent acquisition. Based in the heart of Bengaluru's 
+              tech ecosystem, we focus on helping businesses grow through digital transformation, modern software development, 
+              and professional workforce solutions.
             </p>
             <p>
-              Our team of passionate engineers, designers, and consultants brings together decades of combined
-              experience in cloud computing, embedded systems, HR technology, and talent acquisition. We don't just
-              build solutions; we build relationships.
+              Our team of passionate engineers, designers, and consultants brings together expertise in cloud computing, 
+              IoT & embedded systems, web & mobile development, and HR technology. We don't just build solutions; 
+              we build lasting partnerships.
             </p>
             <p>
-              Today, we're proud to have served over 100+ clients, delivered 500+ successful projects, and continue
-              to innovate in an ever-evolving technological landscape.
+              Technology should empower businesses, not complicate them. That's the principle that drives everything we do 
+              at GeniusXT 7HI.
             </p>
           </div>
         </div>
@@ -148,20 +148,22 @@ const About = () => {
           <h2 className="text-4xl font-bold mb-6">Visit Our Office</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Address</h3>
+              <h3 className="text-xl font-semibold mb-4">Registered Office Address</h3>
               <p className="text-white/90 text-lg">
                 GeniusXT 7HI (OPC) Private Limited<br />
-                Bengaluru, Karnataka<br />
+                Regus Office, Tejas Arcade<br />
+                Rajajinagar<br />
+                Bengaluru, Karnataka 560010<br />
                 India
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Contact</h3>
               <p className="text-white/90 text-lg mb-2">
-                <strong>Email:</strong> info@genius7hi.com
+                <strong>📞 Phone:</strong> <a href="tel:6366967493" className="hover:underline">6366967493</a>
               </p>
               <p className="text-white/90 text-lg">
-                <strong>Phone:</strong> +91 123 456 7890
+                <strong>✉️ Email:</strong> <a href="mailto:sales@genius7hi.com" className="hover:underline">sales@genius7hi.com</a>
               </p>
             </div>
           </div>

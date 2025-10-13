@@ -10,6 +10,14 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { toast } from "sonner";
 import contactBanner from "@/assets/contact-banner.jpg";
 
+// HubSpot Configuration
+// To get these values:
+// 1. Create a form in HubSpot (Marketing > Lead Capture > Forms)
+// 2. Find your Portal ID in HubSpot Settings > Account Setup > Account Defaults
+// 3. Get the Form GUID from the form's embed code or URL
+const HUBSPOT_PORTAL_ID = "YOUR_PORTAL_ID"; // Replace with your HubSpot Portal ID
+const HUBSPOT_FORM_GUID = "YOUR_FORM_GUID"; // Replace with your HubSpot Form GUID
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,20 +28,81 @@ const Contact = () => {
     service: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    toast.success("Thank you! We'll get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      countryCode: "+91",
-      phone: "",
-      company: "",
-      service: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Prepare data for HubSpot
+      const hubspotData = {
+        fields: [
+          {
+            name: "firstname",
+            value: formData.name.split(" ")[0] || formData.name,
+          },
+          {
+            name: "lastname",
+            value: formData.name.split(" ").slice(1).join(" ") || "",
+          },
+          {
+            name: "email",
+            value: formData.email,
+          },
+          {
+            name: "phone",
+            value: `${formData.countryCode}${formData.phone}`,
+          },
+          {
+            name: "company",
+            value: formData.company,
+          },
+          {
+            name: "message",
+            value: `Service Interest: ${formData.service}\n\n${formData.message}`,
+          },
+        ],
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      };
+
+      // Submit to HubSpot
+      const response = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(hubspotData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form to HubSpot");
+      }
+
+      toast.success("Thank you! We'll get back to you soon.");
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        countryCode: "+91",
+        phone: "",
+        company: "",
+        service: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Sorry, there was an error submitting your form. Please try again or email us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -171,8 +240,13 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full gradient-primary text-white">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full gradient-primary text-white"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-5 w-5" />
                   </Button>
                 </form>

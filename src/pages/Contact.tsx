@@ -14,6 +14,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    countryCode: "+91",
     phone: "",
     company: "",
     service: "",
@@ -27,6 +28,7 @@ const Contact = () => {
     setFormData({
       name: "",
       email: "",
+      countryCode: "+91",
       phone: "",
       company: "",
       service: "",
@@ -96,14 +98,34 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => handleChange("phone", e.target.value)}
-                        placeholder="+91 1234567890"
-                        className="mt-2"
-                      />
+                      <div className="flex gap-2 mt-2">
+                        <Select
+                          value={formData.countryCode}
+                          onValueChange={(value) => handleChange("countryCode", value)}
+                        >
+                          <SelectTrigger className="w-[120px]">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="+91">🇮🇳 +91</SelectItem>
+                            <SelectItem value="+1">🇺🇸 +1</SelectItem>
+                            <SelectItem value="+44">🇬🇧 +44</SelectItem>
+                            <SelectItem value="+61">🇦🇺 +61</SelectItem>
+                            <SelectItem value="+86">🇨🇳 +86</SelectItem>
+                            <SelectItem value="+81">🇯🇵 +81</SelectItem>
+                            <SelectItem value="+65">🇸🇬 +65</SelectItem>
+                            <SelectItem value="+971">🇦🇪 +971</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleChange("phone", e.target.value)}
+                          placeholder="1234567890"
+                          className="flex-1"
+                        />
+                      </div>
                     </div>
                     <div>
                       <Label htmlFor="company">Company Name</Label>

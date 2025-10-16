@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const services = [
@@ -24,20 +24,12 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/105371856/admin/dashboard/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>

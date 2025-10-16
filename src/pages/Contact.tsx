@@ -267,9 +267,9 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Address</h4>
                       <p className="text-white/90">
-                        GeniusXT 7HI (OPC) Pvt Ltd<br />
-                        Bengaluru, Karnataka<br />
-                        India
+                        Regus Office, Tejas Arcade<br />
+                        Rajajinagar, Bengaluru<br />
+                        Karnataka 560010, India
                       </p>
                     </div>
                   </div>
@@ -281,10 +281,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <a
-                        href="mailto:info@genius7hi.com"
+                        href="mailto:sales@genius7hi.com"
                         className="text-white/90 hover:text-white"
                       >
-                        info@genius7hi.com
+                        sales@genius7hi.com
                       </a>
                     </div>
                   </div>
@@ -296,10 +296,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
                       <a
-                        href="tel:+911234567890"
+                        href="tel:6366967493"
                         className="text-white/90 hover:text-white"
                       >
-                        +91 123 456 7890
+                        6366967493
                       </a>
                     </div>
                   </div>

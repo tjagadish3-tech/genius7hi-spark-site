@@ -218,10 +218,10 @@ const Contact = () => {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="talent-acquisition">Talent Acquisition</SelectItem>
-                        <SelectItem value="cloud-migration">Cloud Migration</SelectItem>
-                        <SelectItem value="embedded-systems">Embedded Systems</SelectItem>
-                        <SelectItem value="hr-solutions">HR Solutions</SelectItem>
+                        <SelectItem value="iot-embedded-systems">IoT and Embedded Systems Development</SelectItem>
+                        <SelectItem value="cloud-solutions">Cloud Solutions</SelectItem>
+                        <SelectItem value="web-mobile-development">Web & Mobile Application Development</SelectItem>
+                        <SelectItem value="hr-talent-acquisition">HR Solutions & Talent Acquisition</SelectItem>
                         <SelectItem value="other">Other / General Inquiry</SelectItem>
                       </SelectContent>
                     </Select>

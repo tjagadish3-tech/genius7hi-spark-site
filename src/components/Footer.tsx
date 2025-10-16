@@ -106,8 +106,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="tel:6366967493" className="hover:text-primary transition-colors">
-                  Call us: 6366967493
+                <a href="tel:+916366967493" className="hover:text-primary transition-colors">
+                  Call us: +91-6366967493
                 </a>
               </li>
             </ul>

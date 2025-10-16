@@ -160,7 +160,7 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Contact</h3>
               <p className="text-white/90 text-lg mb-2">
-                <strong>📞 Phone:</strong> <a href="tel:6366967493" className="hover:underline">6366967493</a>
+                <strong>📞 Phone:</strong> <a href="tel:+916366967493" className="hover:underline">+91-6366967493</a>
               </p>
               <p className="text-white/90 text-lg">
                 <strong>✉️ Email:</strong> <a href="mailto:sales@genius7hi.com" className="hover:underline">sales@genius7hi.com</a>

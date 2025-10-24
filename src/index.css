@@ -9,19 +9,19 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 199 89% 48%;
+    --primary: 0 0% 10%;
     --primary-foreground: 0 0% 100%;
     
-    --primary-dark: 199 89% 38%;
-    --primary-light: 199 89% 58%;
+    --primary-dark: 0 0% 5%;
+    --primary-light: 0 0% 20%;
 
     --secondary: 220 15% 95%;
     --secondary-foreground: 220 20% 15%;
@@ -42,20 +42,20 @@ All colors MUST be HSL.
     --radius: 0.75rem;
     
     /* Dark overlay for hero sections */
-    --dark-overlay: 200 30% 12%;
-    --dark-surface: 200 25% 15%;
+    --dark-overlay: 0 0% 10%;
+    --dark-surface: 0 0% 15%;
     
-    /* Gradient definitions - Onics/Kyndryl inspired */
-    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 89% 58%));
-    --gradient-hero: linear-gradient(135deg, hsl(200 30% 12%), hsl(199 89% 25%));
-    --gradient-overlay: linear-gradient(135deg, hsl(200 30% 12% / 0.95), hsl(199 89% 20% / 0.95));
-    --gradient-dark-surface: linear-gradient(180deg, hsl(200 25% 15%), hsl(200 25% 18%));
+    /* Gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 20%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 15%));
+    --gradient-overlay: linear-gradient(135deg, hsl(0 0% 10% / 0.95), hsl(0 0% 15% / 0.95));
+    --gradient-dark-surface: linear-gradient(180deg, hsl(0 0% 15%), hsl(0 0% 18%));
     
     /* Shadows */
-    --shadow-soft: 0 2px 8px hsl(199 89% 48% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(199 89% 48% / 0.12);
-    --shadow-hard: 0 8px 32px hsl(199 89% 48% / 0.16);
-    --shadow-glow: 0 0 40px hsl(199 89% 58% / 0.3);
+    --shadow-soft: 0 2px 8px hsl(0 0% 10% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(0 0% 10% / 0.12);
+    --shadow-hard: 0 8px 32px hsl(0 0% 10% / 0.16);
+    --shadow-glow: 0 0 40px hsl(0 0% 20% / 0.3);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -88,11 +88,11 @@ All colors MUST be HSL.
     --popover: 200 25% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 199 89% 58%;
-    --primary-foreground: 200 30% 8%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
     
-    --primary-dark: 199 89% 48%;
-    --primary-light: 199 89% 68%;
+    --primary-dark: 0 0% 85%;
+    --primary-light: 0 0% 100%;
 
     --secondary: 200 20% 18%;
     --secondary-foreground: 0 0% 98%;
@@ -110,13 +110,13 @@ All colors MUST be HSL.
     --input: 200 20% 22%;
     --ring: 199 89% 58%;
     
-    --dark-overlay: 200 30% 10%;
-    --dark-surface: 200 25% 15%;
+    --dark-overlay: 0 0% 10%;
+    --dark-surface: 0 0% 15%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(199 89% 58%), hsl(199 89% 68%));
-    --gradient-hero: linear-gradient(135deg, hsl(200 30% 10%), hsl(199 89% 25%));
-    --gradient-overlay: linear-gradient(135deg, hsl(200 30% 10% / 0.95), hsl(199 89% 20% / 0.95));
-    --gradient-dark-surface: linear-gradient(180deg, hsl(200 25% 15%), hsl(200 25% 18%));
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 20%), hsl(0 0% 30%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 15%));
+    --gradient-overlay: linear-gradient(135deg, hsl(0 0% 10% / 0.95), hsl(0 0% 15% / 0.95));
+    --gradient-dark-surface: linear-gradient(180deg, hsl(0 0% 15%), hsl(0 0% 18%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -192,7 +192,7 @@ All colors MUST be HSL.
   }
   
   .text-gradient {
-    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    background: linear-gradient(to right, hsl(0 0% 10%), hsl(var(--accent)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

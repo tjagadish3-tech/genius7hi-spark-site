@@ -16,8 +16,8 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">
-              <span className="text-gradient">Genius</span>
-              <span className="text-primary">XT 7HI</span>
+              <span className="text-foreground">Genius</span>
+              <span className="text-accent">XT</span>
             </h3>
             <p className="text-muted-foreground text-sm mb-4">
               Innovative technology solutions for modern businesses. Based in Bengaluru, serving clients globally.
